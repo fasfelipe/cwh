@@ -280,7 +280,7 @@ class CloudWatch extends AbstractProcessingHandler
      * @param array $entry
      * @return array
      */
-    private function formatRecords(array $entry): array
+    private function formatRecords(\Monolog\LogRecord $entry): array
     {
         $entries = str_split($entry['formatted'], self::EVENT_SIZE_LIMIT);
         $timestamp = $entry['datetime']->format('U.u') * 1000;
